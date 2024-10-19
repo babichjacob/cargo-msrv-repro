@@ -5,8 +5,12 @@ on:
 
 jobs:
   repro:
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 15
+    name: on ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/install-action@cargo-binstall
