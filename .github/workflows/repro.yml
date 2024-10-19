@@ -1,0 +1,14 @@
+name: Show the problem on every commit
+
+on:
+  push:
+
+jobs:
+  repro:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: taiki-e/install-action@cargo-binstall
+
+      - run: cargo binstall -y cargo-msrv
