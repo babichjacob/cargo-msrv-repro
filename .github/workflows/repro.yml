@@ -15,4 +15,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: taiki-e/install-action@cargo-binstall
 
-      - run: cargo binstall -y --verbose cargo-msrv --pkg-url "{ repo }/releases/download/v{ version }/{ name }-{ target }-v{ version }{ archive-suffix }"
+      - run: cargo binstall -y --verbose cargo-msrv --pkg-url "{ repo }/releases/download/v{ version }/{ name }-{ target }-v{ version }{ archive-suffix }" --pkg-fmt "tgz"
